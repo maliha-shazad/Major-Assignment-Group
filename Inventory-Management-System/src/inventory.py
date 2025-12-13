@@ -16,4 +16,15 @@ class Inventory:
         for product in self.products:
             print(product.display())
 
+    def search_product(self, product_id):
+        for product in self.products:
+            if product.product_id == product_id:
+                return product
+        return None
 
+    def delete_product(self, product_id):
+        for product in self.products:
+            if product.product_id == product_id:
+                self.products.remove(product)
+                return True
+        return False
