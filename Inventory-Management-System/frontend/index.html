@@ -2,25 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h1>Inventory Management System</h1>
-
     <div class="container">
-        <h2>Add Product</h2>
-        <input type="text" placeholder="Product ID">
-        <input type="text" placeholder="Product Name">
-        <input type="number" placeholder="Price">
-        <input type="number" placeholder="Quantity">
-        <button>Add Product</button>
-    </div>
+        <h1>Inventory Management System</h1>
 
-    <div class="container">
-        <h2>Inventory List</h2>
-        <p>Products will be displayed here</p>
+        <!-- Add / Update Product Form -->
+        <form id="productForm">
+            <input type="hidden" id="productId">
+            <input type="text" id="productName" placeholder="Product Name" required>
+            <input type="number" id="productQuantity" placeholder="Quantity" required>
+            <input type="number" id="productPrice" placeholder="Price" required>
+            <button type="submit">Add Product</button>
+            <button type="button" id="cancelUpdate" style="display:none;">Cancel Update</button>
+        </form>
+
+        <!-- Products Table -->
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Products will be dynamically added here -->
+            </tbody>
+        </table>
     </div>
 
     <script src="script.js"></script>
